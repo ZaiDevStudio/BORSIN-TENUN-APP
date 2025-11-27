@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekapan Gaji</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.sheetjs.com/xlsx-0.19.3/package/dist/xlsx.full.min.js"></script>
+</head>
+<body id="page-rekapan-gaji">
+    <div class="navbar">
+        <a href="dashboard.html" class="nav-btn"><i class="fas fa-arrow-left"></i></a>
+        <h2>Rekapan Gaji</h2>
+        <div class="admin-only" style="font-size: 0.8rem;">
+            <i class="fas fa-file-excel nav-btn" onclick="exportExcel()" title="Unduh Excel"></i>
+        </div>
+    </div>
+
+    <div class="container" style="max-width: 100%;">
+        <div class="card" style="overflow-x: auto; padding: 0;">
+            <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
+                <thead style="background: var(--primary); color: white;">
+                    <tr>
+                        <th style="padding:10px;">No</th>
+                        <th>Tanggal</th>
+                        <th>Nama</th>
+                        <th>Jml Ulos</th>
+                        <th>Pakan</th>
+                        <th>Gaji Bersih</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="tbodyGaji" style="text-align: center; font-size: 0.9rem;">
+                    </tbody>
+                <tfoot style="background: #eee; font-weight: bold;">
+                    <tr>
+                        <td colspan="3">TOTAL KESELURUHAN</td>
+                        <td id="t_ulos">0</td>
+                        <td id="t_pakan">Rp 0</td>
+                        <td id="t_gaji" style="color:var(--primary)">Rp 0</td>
+                        <td>
+                            <button class="btn-sm" onclick="salinTotal()"><i class="fas fa-copy"></i></button>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    
+    <script>
+        function exportExcel() {
+            const table = document.querySelector("table");
+            const wb = XLSX.utils.table_to_book(table);
+            XLSX.writeFile(wb, "Rekapan_Gaji_Borsin.xlsx");
+        }
+        function salinTotal() {
+            const txt = document.getElementById('t_gaji').innerText;
+            navigator.clipboard.writeText(txt);
+            alert('Total Gaji Disalin: ' + txt);
+        }
+    </script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minta Upah</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body id="page-minta-upah">
+    <div class="navbar">
+        <a href="dashboard.html" class="nav-btn"><i class="fas fa-arrow-left"></i></a>
+        <h2>Form Minta Upah</h2><div></div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <form id="formInput">
+                <div class="form-group"><label>Nama Karyawan</label><select id="nama_karyawan"></select></div>
+                <div class="form-group"><label>Ulos yang Selesai</label><select id="nama_ulos"></select></div>
+                <div class="form-group"><label>Jumlah Selesai</label><input type="number" id="jumlah" required></div>
+                <div class="form-group"><label>Biaya Pakan (Rp)</label><input type="number" id="pakan" value="0"></div>
+                
+                <h4 style="margin:15px 0 10px; color:var(--primary)">Potongan</h4>
+                <div class="dashboard-grid" style="grid-template-columns: 1fr 1fr;">
+                    <div class="form-group"><input type="number" id="pot_air" placeholder="Listrik/Air"></div>
+                    <div class="form-group"><input type="number" id="pot_wifi" placeholder="Wifi"></div>
+                    <div class="form-group"><input type="number" id="pot_stell" placeholder="Stell"></div>
+                    <div class="form-group"><input type="number" id="biaya_lain" placeholder="Lainnya"></div>
+                </div>
+                <button type="submit" class="btn">Kirim Permintaan</button>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+</html>

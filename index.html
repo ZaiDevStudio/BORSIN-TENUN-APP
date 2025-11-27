@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memuat Aplikasi...</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Gaya khusus untuk Loading Screen */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: var(--bg);
+            text-align: center;
+        }
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid var(--primary);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .brand-text {
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loader"></div>
+    <div class="brand-text">BORSIN TENUN APP</div>
+    <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">Sedang memuat data...</p>
+
+    <script type="module">
+        import { auth, db } from './config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+        import { doc, getDoc } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
+
+        // Logika "Satpam": Cek apakah user sudah login atau belum
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                // Jika user login, simpan role dan lempar ke Dashboard
+                const userDoc = await getDoc(doc(db, "users", user.uid));
+                const userData = userDoc.exists() ? userDoc.data() : { role: 'user' };
+                
+                sessionStorage.setItem('role', userData.role);
+                window.location.href = 'dashboard.html';
+            } else {
+                // Jika belum login, lempar ke halaman Login
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slip Gaji</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .slip-card {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            background: #fff;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .slip-header {
+            text-align: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .slip-row { display: flex; justify-content: space-between; margin-bottom: 5px; }
+        .total-row { font-weight: bold; font-size: 1.1rem; color: var(--primary); border-top: 1px solid #ddd; padding-top: 5px; margin-top: 10px; }
+        
+        @media print {
+            body * { visibility: hidden; }
+            .slip-card, .slip-card * { visibility: visible; }
+            .slip-card { position: absolute; left: 0; top: 0; width: 100%; border: 1px solid #000; }
+            .no-print { display: none; }
+        }
+    </style>
+</head>
+<body id="page-slip-gaji">
+    <div class="navbar no-print">
+        <a href="dashboard.html" class="nav-btn"><i class="fas fa-arrow-left"></i></a>
+        <h2>Slip Gaji</h2><div></div>
+    </div>
+
+    <div class="container">
+        <div class="slip-card">
+            <div class="slip-header">
+                <h3>BORSIN TENUN</h3>
+                <p>Slip Gaji Karyawan</p>
+                <small id="tanggal">27 November 2025</small>
+            </div>
+            
+            <div class="slip-row"><span>Nama:</span> <strong>Yeriyuma Zai</strong></div>
+            <div class="slip-row"><span>Ulos:</span> <span>Sadum (5 lbr)</span></div>
+            <hr style="margin: 10px 0; opacity: 0.3;">
+            
+            <div class="slip-row"><span>Gaji Kotor:</span> <span>Rp 500.000</span></div>
+            <div class="slip-row" style="color:red"><span>Pot. Pakan:</span> <span>- Rp 50.000</span></div>
+            <div class="slip-row" style="color:red"><span>Pot. Lain:</span> <span>- Rp 20.000</span></div>
+            
+            <div class="slip-row total-row">
+                <span>Diterima:</span>
+                <span>Rp 430.000</span>
+            </div>
+            
+            <div class="text-center no-print" style="margin-top: 20px;">
+                <button class="btn" onclick="window.print()">Unduh / Cetak PDF</button>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="main.js"></script>
+</body>
+</html>

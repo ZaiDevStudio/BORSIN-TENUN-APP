@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body id="page-dashboard">
+    <div class="navbar">
+        <h2>Dashboard Borsin</h2>
+        <i class="fas fa-sign-out-alt nav-btn" id="btnLogout"></i>
+    </div>
+
+    <div class="container">
+        <h4 class="admin-only" style="margin: 20px 0 10px;">Menu Admin</h4>
+        <div class="dashboard-grid admin-only">
+            <a href="tambah_data_ulos.html" class="menu-item">
+                <i class="fas fa-file-upload"></i> Tambah Ulos
+            </a>
+            <a href="tambah_karyawan.html" class="menu-item">
+                <i class="fas fa-user-plus"></i> Tambah Karyawan
+            </a>
+            <a href="tambah_pesanan.html" class="menu-item">
+                <i class="fas fa-cart-plus"></i> Tambah Pesanan
+            </a>
+            <a href="hitung_gaji.html" class="menu-item">
+                <i class="fas fa-calculator"></i> Hitung Gaji
+            </a>
+        </div>
+
+        <h4 style="margin: 20px 0 10px;">Menu Utama</h4>
+        <div class="dashboard-grid">
+            <a href="ulos.html" class="menu-item"><i class="fas fa-images"></i> Galeri Ulos</a>
+            <a href="data_karyawan.html" class="menu-item"><i class="fas fa-users"></i> Data Karyawan</a>
+            <a href="pesanan.html" class="menu-item"><i class="fas fa-clipboard-list"></i> Data Pesanan</a>
+            <a href="rekapan_gaji.html" class="menu-item"><i class="fas fa-table"></i> Rekapan Gaji</a>
+            <a href="slip_gaji.html" class="menu-item"><i class="fas fa-receipt"></i> Slip Gaji</a>
+            <a href="minta_upah.html" class="menu-item"><i class="fas fa-hand-holding-usd"></i> Minta Upah</a>
+            <a href="tentang.html" class="menu-item"><i class="fas fa-info-circle"></i> Tentang</a>
+        </div>
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+</html>

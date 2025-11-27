@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Pesanan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body id="page-tambah-pesanan">
+    <div class="navbar">
+        <a href="dashboard.html" class="nav-btn"><i class="fas fa-arrow-left"></i></a>
+        <h2>Input Pesanan</h2><div></div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <form id="formInput">
+                <div class="form-group"><label>Pilih Ulos</label><select id="nama_ulos"></select></div>
+                <div class="form-group"><label>Jumlah (Lembar)</label><input type="number" id="jumlah" required></div>
+                <div class="form-group"><label>Dikerjakan Oleh</label><select id="nama_karyawan"></select></div>
+                <button type="submit" class="btn">Kirim Pesanan</button>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Gaji</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body id="page-hitung-gaji">
+    <div class="navbar">
+        <a href="dashboard.html" class="nav-btn"><i class="fas fa-arrow-left"></i></a>
+        <h2>Hitung Gaji</h2>
+        <div></div>
+    </div>
+
+    <div class="container">
+        <form id="formGaji">
+            <div class="card">
+                <h3>Data Kerja</h3>
+                <div class="form-group">
+                    <label>Nama Karyawan</label>
+                    <select id="nama_karyawan"><option>Pilih Karyawan...</option></select>
+                </div>
+                <div class="form-group">
+                    <label>Jenis Ulos</label>
+                    <select id="jenis_ulos"><option>Pilih Ulos...</option></select>
+                </div>
+                <div class="form-group">
+                    <label>Upah per Lembar (Rp)</label>
+                    <input type="number" id="upah_lembar">
+                </div>
+                <div class="form-group">
+                    <label>Jumlah Lembar</label>
+                    <input type="number" id="jumlah" required>
+                </div>
+                <div class="form-group">
+                    <label>Biaya Pakan (Rp)</label>
+                    <input type="number" id="pakan" value="0">
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Potongan</h3>
+                <div class="dashboard-grid" style="grid-template-columns: 1fr 1fr;">
+                    <div class="form-group"><label>Air/Listrik</label><input type="number" id="pot_air"></div>
+                    <div class="form-group"><label>Wifi</label><input type="number" id="pot_wifi"></div>
+                    <div class="form-group"><label>Stell</label><input type="number" id="pot_stell"></div>
+                    <div class="form-group"><label>Lainnya</label><input type="number" id="pot_lain"></div>
+                </div>
+            </div>
+
+            <div class="card" style="background: #e3f2fd; border-top: 4px solid #2196f3;">
+                <button type="button" id="btnHitung" class="btn btn-secondary" style="margin-bottom:10px;">Hitung Bersih</button>
+                <div class="form-group">
+                    <label>Total Gaji Bersih</label>
+                    <input type="text" id="total_gaji" readonly style="font-size: 1.5rem; font-weight: bold; color: var(--primary);">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success">Simpan Data Gaji</button>
+        </form>
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+</html>

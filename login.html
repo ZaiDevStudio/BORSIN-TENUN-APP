@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masuk / Daftar - Borsin Tenun</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body id="page-login" style="display:flex; align-items:center; justify-content:center;">
+
+    <div class="card" style="width: 100%; max-width: 400px; text-align: center;">
+        <img src="borsin.png" alt="Logo" style="width: 80px; margin-bottom: 20px;">
+        
+        <div id="box-login">
+            <h2 style="margin-bottom: 10px; color: var(--primary);">Masuk Aplikasi</h2>
+            <p style="margin-bottom: 20px; color: #666;">Silakan masuk untuk melanjutkan</p>
+            <form id="loginForm">
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" placeholder="Kata Sandi" required>
+                </div>
+                <button type="submit" class="btn">Masuk</button>
+            </form>
+            <p style="margin-top: 20px; font-size: 0.9rem;">
+                Belum punya akun? <a href="#" id="linkKeDaftar" style="color: var(--primary); font-weight:bold;">Daftar Disini</a>
+            </p>
+        </div>
+
+        <div id="box-daftar" class="hidden">
+            <h2 style="margin-bottom: 10px; color: var(--primary);">Buat Akun Baru</h2>
+            <p style="margin-bottom: 20px; color: #666;">Isi data untuk mendaftar</p>
+            <form id="daftarForm">
+                <div class="form-group">
+                    <input type="text" id="reg_nama" placeholder="Nama Lengkap" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="reg_email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="reg_password" placeholder="Kata Sandi (Min. 6 karakter)" required>
+                </div>
+                <button type="submit" class="btn btn-success">Daftar Sekarang</button>
+            </form>
+            <p style="margin-top: 20px; font-size: 0.9rem;">
+                Sudah punya akun? <a href="#" id="linkKeLogin" style="color: var(--primary); font-weight:bold;">Masuk Disini</a>
+            </p>
+        </div>
+
+        <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.7;">Borsin Tenun Management</p>
+    </div>
+
+    <script type="module" src="main.js"></script>
+    
+    <script>
+        document.getElementById('linkKeDaftar').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('box-login').classList.add('hidden');
+            document.getElementById('box-daftar').classList.remove('hidden');
+        });
+        document.getElementById('linkKeLogin').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('box-login').classList.remove('hidden');
+            document.getElementById('box-daftar').classList.add('hidden');
+        });
+    </script>
+</body>
+</html>

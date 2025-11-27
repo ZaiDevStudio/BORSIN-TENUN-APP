@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Ulos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body id="page-tambah-ulos">
+    <div class="navbar">
+        <a href="dashboard.html" class="nav-btn"><i class="fas fa-arrow-left"></i></a>
+        <h2>Input Data Ulos</h2>
+        <div></div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <form id="formUlos">
+                <div class="form-group">
+                    <label>Foto Ulos</label>
+                    <input type="file" id="foto" accept="image/*" required>
+                </div>
+                <div class="form-group">
+                    <label>Nama Ulos</label>
+                    <input type="text" id="nama" required>
+                </div>
+                <div class="form-group">
+                    <label>Jenis & Motif</label>
+                    <div style="display:flex; gap:10px;">
+                        <input type="text" id="jenis" placeholder="Jenis" required>
+                        <input type="text" id="motif" placeholder="Motif" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Warna</label>
+                    <input type="color" id="warna" style="height: 50px;" value="#800000">
+                </div>
+                <div class="form-group">
+                    <div style="display:flex; gap:10px;">
+                        <input type="number" id="upah" placeholder="Upah/Lembar (Rp)" required>
+                        <input type="number" id="stock" placeholder="Stok" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Harga Jual</label>
+                    <input type="number" id="harga" placeholder="Rp" required>
+                </div>
+                <button type="submit" class="btn">Simpan Data</button>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
